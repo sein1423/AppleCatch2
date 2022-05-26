@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public bool gs = false;
@@ -46,6 +46,11 @@ public class GameManager : MonoBehaviour
             time -= Time.deltaTime;
             timer.text = time.ToString("F1") + " S";
             point.text = score.ToString("F0") + " Point";
+        }
+
+        if (time <= 0)
+        {
+            SceneManager.LoadScene(1);
         }
 
     }
